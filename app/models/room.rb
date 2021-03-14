@@ -1,3 +1,4 @@
 class Room < ApplicationRecord
-  belongs_to :account
+  acts_as_tenant(:account)
+  has_many :people
 end

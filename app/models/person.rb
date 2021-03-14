@@ -1,4 +1,4 @@
 class Person < ApplicationRecord
-  belongs_to :account
+  acts_as_tenant(:account)
   belongs_to :room
 end
