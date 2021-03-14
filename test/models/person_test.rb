@@ -1,7 +1,7 @@
 require "test_helper"
 
 class PersonTest < ActiveSupport::TestCase
-  test 'prove it' do
+  test 'acts_as_tenant: ensure all models in an association belong to the same tenant' do
     ActsAsTenant.with_tenant(accounts(:one)) do
       person = people(:one)
       assert person.account == accounts(:one)
