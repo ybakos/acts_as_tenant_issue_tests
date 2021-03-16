@@ -10,7 +10,7 @@ class AccountTest < ActiveSupport::TestCase
     room1 = Room.create!(name: "Account 1 room")
     person = room1.people.create!(name: 'Account 1 person')
     person.room = room2
-    refute person.valid? # This should pass, but it fails!
-    refute person.update(room_id: room2.id) # This should pass, but it fails!
+    refute person.valid? # This now passes, and it should.
+    refute person.update(room_id: room2.id) # This now passes, and it should.
   end
 end

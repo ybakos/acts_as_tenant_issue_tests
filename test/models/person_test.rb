@@ -15,9 +15,9 @@ class PersonTest < ActiveSupport::TestCase
       refute person.account == second_room.account
       person.room = second_room # person's account is not the same as second_room's account
 
-      refute person.valid? # This should pass, but it fails.
-      refute person.save # This should pass, but it fails.
-      assert_raises(ActiveRecord::RecordInvalid) { person.save! } # This should pass, but it fails.
+      refute person.valid? # This now passes, and it should.
+      refute person.save # This now passes, and it should.
+      assert_raises(ActiveRecord::RecordInvalid) { person.save! } # This now passes, and it should.
     end
   end
 end
