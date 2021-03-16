@@ -8,7 +8,7 @@ class AccountTest < ActiveSupport::TestCase
     room2 = accounts(:two).rooms.create!(name: 'Account 2 room')
     ActsAsTenant.current_tenant = accounts(:one)
     room1 = Room.create!(name: "Account 1 room")
-    person = room1.people.create!(name: 'First account person')
+    person = room1.people.create!(name: 'Account 1 person')
     person.room = room2
     refute person.valid? # This should pass, but it fails!
     refute person.update(room_id: room2.id) # This should pass, but it fails!
